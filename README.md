@@ -23,6 +23,12 @@ Currently supported CMSes:
 
 ## Sample Usage
 
+Add Fillet to your site with Composer
+
+```
+composer require "dragonmantank/fillet:dev-master"
+```
+
 Right now Fillet doesn't integrate with Sculpin directly, but you can use the
 following sample code to run Fillet.
 
@@ -38,6 +44,6 @@ $config = [
     ]
 ];
 
-$fillet = new \Fillet\Fillet(new \Fillet\Parser\WordpressExport(), __DIR__ . '/cal.xml', $config);
+$fillet = new \Fillet\Fillet(new \Fillet\Parser\WordpressExport(), __DIR__ . '/mysite.xml', $config);
 $fillet->parse();
 ```
