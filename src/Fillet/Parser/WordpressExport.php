@@ -19,13 +19,28 @@ class WordpressExport
             $wpItems = $xml->children($WPNamespace);
             $content = $xml->children($DCNamespace)->encoded;
 
+            $categories = [];
+            $tags = [];
+
+            foreach($xml->category as $category) {
+                if('category' == $category->attributes()->domain) {
+                    $categories[] = (string)$category;
+                }
+
+                if('post_tag' == $category->attributes()->domain) {
+                    $tags[] = (string)$category;
+                }
+            }
+
             if($wpItems) {
                 $post_type = (string)$wpItems->post_type;
                 $data = [
                     'type' => $post_type,
                     'post_date' => new \DateTime((string)$wpItems->post_date),
                     'title' => (string)$xml->title,
-                    'content' => (string)$content
+                    'content' => (string)$content,
+                    'tags' => $tags,
+                    'categories' => $categories,
                 ];
                 yield $data;
             }

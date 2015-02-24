@@ -9,7 +9,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "symfony/yaml": "~2.1"
+    },
     "autoload": {
         "psr-4": {
             "Fillet\\": "src/Fillet/"
