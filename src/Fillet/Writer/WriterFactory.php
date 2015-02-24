@@ -19,11 +19,13 @@ class WriterFactory
      * @return WriterInterface
      * @throws \Exception
      */
-    static public function create($postType, $config, $throwExceptionOnInvalidWriter = false)
+    public static function create($postType, $config, $throwExceptionOnInvalidWriter = false)
     {
         $className = 'Fillet\\Writer\\' . ucfirst($postType) . 'Writer';
         if(class_exists($className)) {
-            return new $className($config['destinationFolders'][$postType]);
+            /** @var WriterInterface $writer */
+            $writer = new $className($config['destinationFolders'][$postType]);
+            return $writer;
         }
 
         if($throwExceptionOnInvalidWriter) {

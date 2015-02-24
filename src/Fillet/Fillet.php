@@ -53,8 +53,6 @@ class Fillet
     public function parse()
     {
         foreach($this->parser->parse($this->inputFile) as $item) {
-            $writer = null;
-
             $writer = WriterFactory::create($item['type'], $this->config);
 
             if($writer) {
