@@ -4,8 +4,18 @@ namespace Fillet\Writer;
 
 use Symfony\Component\Yaml\Dumper as YamlDumper;
 
+/**
+ * Generates a Page for Sculpin
+ *
+ * @package Fillet\Writer
+ */
 class PageWriter extends AbstractWriter
 {
+    /**
+     * Write out a set of data into a file
+     *
+     * @param array $data Data to use for constructing the page
+     */
     public function write($data)
     {
         $post_date_string = $data['post_date']->format('Y-m-d H:i:s');

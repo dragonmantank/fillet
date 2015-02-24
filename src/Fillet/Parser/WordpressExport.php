@@ -2,8 +2,19 @@
 
 namespace Fillet\Parser;
 
-class WordpressExport
+/**
+ * Converts a Wordpress Export XML file into data that Fillet can parse into HTML for Sculpin
+ *
+ * @package Fillet\Parser
+ */
+class WordpressExport implements ParserInterface
 {
+    /**
+     * Parses a specific XML file
+     *
+     * @param string $inputFile File to parse
+     * @return \Generator
+     */
     public function parse($inputFile)
     {
         $DCNamespace = 'http://purl.org/rss/1.0/modules/content/';
