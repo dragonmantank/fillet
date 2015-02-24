@@ -2,6 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/dragonmantank/fillet/badges/gpa.svg)](https://codeclimate.com/github/dragonmantank/fillet)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dragonmantank/fillet/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dragonmantank/fillet/?branch=master)
+
 Many people coming to Sculpin are coming from other CMSes out there in the
 wild. While almost all of these are database-backed, Sculpin isn't. Fillet
 will help convert exports from different CMSes into the HTML/Markdown format
