@@ -23,14 +23,19 @@ Currently supported CMSes:
 
 ## Sample Usage
 
+### Use with Sculpin
+
+There is a bundle version of this that integrates with Sculpin directly. You can find it at [dragonmantank/fillet-sculpin-bundle](https://github.com/dragonmantank/fillet-sculpin-bundle)
+
+### Manual installation with Composer for development
+
 Add Fillet to your site with Composer
 
 ```
 composer require "dragonmantank/fillet:dev-master"
 ```
 
-Right now Fillet doesn't integrate with Sculpin directly, but you can use the
-following sample code to run Fillet.
+You can use the following sample code to run Fillet.
 
 ```php
 <?php
