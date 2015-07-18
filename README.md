@@ -52,3 +52,21 @@ $config = [
 $fillet = new \Fillet\Fillet(new \Fillet\Parser\WordpressExport(), __DIR__ . '/mysite.xml', $config);
 $fillet->parse();
 ```
+
+### Generating markdown with pandoc
+
+If you have [Pandoc](http://pandoc.org) installed, you can use it to generate markdown output instead of HTML by
+adding a `pandoc` key to `$config`:
+
+```php
+$config = [
+    'destinationFolders' => [
+        'page' => __DIR__ . '/source/',
+        'post' => __DIR__ . '/source/_posts/',
+    ],
+    'pandoc' => [
+        'to_markdown' => true,
+        'bin' => '/usr/local/bin/pandoc',
+    ]
+];
+```
