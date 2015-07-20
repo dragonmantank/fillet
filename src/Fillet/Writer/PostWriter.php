@@ -34,6 +34,13 @@ class PostWriter extends AbstractWriter
 		$dumper = new YamlDumper();
 		$header = '---' . PHP_EOL . $dumper->dump($headerData, 2) . '---' . PHP_EOL;
 
-        file_put_contents($this->destinationFolder . '/' . $filename . '.html', $header . PHP_EOL . $data['content']);
+        $filename = $this->destinationFolder . '/' . $filename;
+        if ($this->isMarkdownEnabled()) {
+            $filename .= '.md';
+            $data['content'] = $this->toMarkdown($data['content']);
+        } else {
+            $filename .= '.html';
+        }
+        file_put_contents($filename, $header . PHP_EOL . $data['content']);
     }
 }
